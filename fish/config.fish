@@ -112,3 +112,24 @@ set -gx LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
 
 # rvm default
 
+# Ash's Original Config starts here
+
+function fish_user_key_bindings
+  bind \cr 'peco_select_history (commandline -b)'
+end
+
+thefuck --alias | source
+
+set -gx BETTER_EXCEPTIONS 1
+
+set -g theme_nerd_fonts yes
+set -g theme_color_scheme gruvbox
+set -g fish_user_paths "$HOME/.poetry/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/python/libexec/bin" $fish_user_paths
+set -x VIRTUAL_ENV_DISABLE_PROMPT 1 #disable this if not using a shell theme that shows the venv
+
+# added by pipx (https://github.com/pipxproject/pipx)
+set -x PATH /Users/arounkles/.local/bin $PATH
+
+direnv hook fish | source
+
