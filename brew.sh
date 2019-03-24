@@ -43,7 +43,7 @@ brew install z
 brew install entr
 
 # github util. gotta love `hub fork`, `hub create`, `hub checkout <PRurl>`
-brew install hub
+# brew install hub
 
 
 # mtr - ping & traceroute. best.
@@ -56,7 +56,7 @@ brew install mtr
 
 
 # Install other useful binaries
-brew install the_silver_searcher
+brew install ack
 brew install fzf
 
 brew install git
@@ -70,7 +70,7 @@ brew install ffmpeg --with-libvpx
 
 brew install terminal-notifier
 
-brew install android-platform-tools
+# brew install android-platform-tools
 brew install pidcat   # colored logcat guy
 
 brew install ncdu # find where your diskspace went
