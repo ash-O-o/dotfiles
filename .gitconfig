@@ -2,18 +2,22 @@
 	c = commit -am
 	fpush = push --force
 	s = status
-	st = status
 	sclone = clone --depth=1
 	amend = commit --amend --all
 	undocommit = reset HEAD~
 	hreset = reset --hard
-	co = checkout
-	br = branch
 	df = diff --color --color-words --abbrev
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	cherrypick = cherry-pick
 	cherry = cherry-pick
 	cp = cherry-pick
+	st = status -sb
+	ci = commit
+	br = branch
+	co = checkout
+	ready = rebase -i @{u}
+	purr = pull --rebase
+	when = for-each-ref --sort=committerdate --format='%(refname:short) * %(authorname) * %(committerdate:relative)' refs/remotes/
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
