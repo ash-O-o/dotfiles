@@ -1,19 +1,5 @@
 # thx to https://github.com/mduvall/config/
 
-function subl --description 'Open Sublime Text'
-  if test -d "/Applications/Sublime Text.app"
-    "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $argv
-  else if test -d "/Applications/Sublime Text 2.app"
-    "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" $argv
-  else if test -x "/opt/sublime_text/sublime_text"
-    "/opt/sublime_text/sublime_text" $argv
-  else if test -x "/opt/sublime_text_3/sublime_text"
-    "/opt/sublime_text_3/sublime_text" $argv
-  else
-    echo "No Sublime Text installation found"
-  end
-end
-
 function loc --description "zfz with locatef"
   glocate --database=(brew --prefix)/var/locate/locatedb --all --ignore-case --null $argv | ggrep --null --invert-match --extended-regexp '~$' | fzf --read0 -0 -1 -m
 end
@@ -58,10 +44,6 @@ end
 # `shellswitch [bash|zsh|fish]`
 function shellswitch
 	chsh -s (brew --prefix)/bin/$argv
-end
-
-function code
-  env VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCodeInsiders" --args $argv
 end
 
 function upgradeyarn
